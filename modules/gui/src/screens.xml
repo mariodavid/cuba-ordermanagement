@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <screen id="om$ProductCategory.edit"
+            template="com/company/ordermanagement/gui/productcategory/productcategory-edit.xml"/>
+    <screen id="om$ProductCategory.browse"
+            template="com/company/ordermanagement/gui/productcategory/productcategory-browse.xml"/>
+    <screen id="om$Product.edit"
+            template="com/company/ordermanagement/gui/product/product-edit.xml"/>
+    <screen id="om$Product.browse"
+            template="com/company/ordermanagement/gui/product/product-browse.xml"/>
+    <screen id="om$Order.edit"
+            template="com/company/ordermanagement/gui/order/order-edit.xml"/>
+    <screen id="om$Order.browse"
+            template="com/company/ordermanagement/gui/order/order-browse.xml"/>
+    <screen id="om$Customer.edit"
+            template="com/company/ordermanagement/gui/customer/customer-edit.xml"/>
+    <screen id="om$Customer.browse"
+            template="com/company/ordermanagement/gui/customer/customer-browse.xml"/>
+</screen-config>

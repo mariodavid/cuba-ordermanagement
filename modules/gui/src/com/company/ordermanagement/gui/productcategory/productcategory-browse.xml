@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.ordermanagement.gui.productcategory.ProductCategoryBrowse"
+        focusComponent="productCategoriesTable"
+        lookupComponent="productCategoriesTable"
+        messagesPack="com.company.ordermanagement.gui.productcategory">
+    <dsContext>
+        <collectionDatasource id="productCategoriesDs"
+                              class="com.company.ordermanagement.entity.ProductCategory"
+                              view="_local">
+            <query>
+                <![CDATA[select e from om$ProductCategory e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <layout expand="productCategoriesTable"
+            spacing="true">
+        <filter id="filter"
+                datasource="productCategoriesDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="productCategoriesTable"
+               width="100%">
+            <actions>
+                <action id="create"
+                        openType="DIALOG"/>
+                <action id="edit"
+                        openType="DIALOG"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+            </columns>
+            <rows datasource="productCategoriesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="productCategoriesTable.create"/>
+                <button id="editBtn"
+                        action="productCategoriesTable.edit"/>
+                <button id="removeBtn"
+                        action="productCategoriesTable.remove"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>
