@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editCaption"
+        class="com.company.ordermanagement.gui.lineitem.LineItemEdit"
+        datasource="lineItemDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.ordermanagement.gui.lineitem">
+    <dsContext>
+        <datasource id="lineItemDs"
+                    class="com.company.ordermanagement.entity.LineItem"
+                    view="lineItem-view"/>
+    </dsContext>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="lineItemDs">
+            <column width="250px">
+                <field id="position"/>
+                <field id="product"/>
+                <field id="quantity"/>
+                <field id="quantityUnit"/>
+                <field id="unitPrice"/>
+                <field id="totalPrice"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

@@ -35,10 +35,10 @@ public class LineItem extends StandardEntity {
     @Column(name = "QUANTITY_UNIT", nullable = false)
     protected String quantityUnit;
 
-    @Column(name = "UNIT_PRICE", nullable = false, precision = 2, scale = 2)
+    @Column(name = "UNIT_PRICE", nullable = false)
     protected BigDecimal unitPrice;
 
-    @Column(name = "TOTAL_PRICE", nullable = false, precision = 2, scale = 2)
+    @Column(name = "TOTAL_PRICE", nullable = false)
     protected BigDecimal totalPrice;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

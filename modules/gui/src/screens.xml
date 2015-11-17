@@ -16,4 +16,6 @@
             template="com/company/ordermanagement/gui/customer/customer-edit.xml"/>
     <screen id="om$Customer.browse"
             template="com/company/ordermanagement/gui/customer/customer-browse.xml"/>
+    <screen id="om$LineItem.edit"
+            template="com/company/ordermanagement/gui/lineitem/lineitem-edit.xml"/>
 </screen-config>

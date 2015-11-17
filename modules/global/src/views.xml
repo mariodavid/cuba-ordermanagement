@@ -10,7 +10,10 @@
           name="lineItem-view">
         <property name="position"/>
         <property name="product"
-                  view="_minimal"/>
+                  view="_minimal">
+            <property name="category"
+                      view="_minimal"/>
+        </property>
         <property name="quantity"/>
         <property name="quantityUnit"/>
         <property name="unitPrice"/>
