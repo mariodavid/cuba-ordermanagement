@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+    
+    <beans:bean name="portal_AuthProvider" class="com.company.ordermanagement.portal.auth.PortalAuthenticationProvider"/>
+    
+    <!-- Logout from middleware on logout -->
+    <beans:bean id="cuba_PortalLogoutHandler" class="com.haulmont.cuba.portal.sys.security.PortalLogoutHandler">
+        <beans:property name="targetUrlParameter" value="/login"/>
+    </beans:bean>
+
+    <http auto-config="true">
+        <csrf disabled="true"/>
+        <!-- resources -->
+        <intercept-url pattern="/resources/**" access="permitAll"/>
+
+        <!-- login & registration -->
+        <intercept-url pattern="/login" access="permitAll"/>
+
+        <!-- rest-api -->
+        <intercept-url pattern="/api/**" access="permitAll"/>
+
+        <!-- index page -->
+        <intercept-url pattern="/" access="permitAll"/>
+        <intercept-url pattern="/index" access="permitAll"/>
+
+        <intercept-url pattern="/**" access="hasRole('ROLE_USER')"/>
+
+        <form-login login-page='/login'
+                    username-parameter="login"
+                    password-parameter="password"
+                    login-processing-url="/login"
+                    default-target-url='/'
+                    always-use-default-target='true'
+                    authentication-failure-url="/login"/>
+
+        <!--logout, do not invalidate session, it makes cuba_PortalLogoutHandler-->
+        <logout invalidate-session="false"
+                logout-url="/logout"
+                success-handler-ref="cuba_PortalLogoutHandler"/>
+    </http>
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider ref="portal_AuthProvider"/>
+    </authentication-manager>
+</beans:beans>

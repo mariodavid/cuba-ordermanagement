@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
+
+    <mvc:annotation-driven/>
+
+    <mvc:view-controller path="/error/404"/>
+    <mvc:view-controller path="/error/500"/>
+    <mvc:view-controller path="/maintain"/>
+
+    <context:component-scan base-package="com.company.ordermanagement.portal.controllers"/>
+    <context:component-scan base-package="com.haulmont.cuba.portal.restapi"/>
+
+    <!-- Static resources -->
+    <!--suppress SpringModelInspection -->
+    <mvc:resources mapping="/resources/**" location="/resources/" cache-period="0"/>
+
+    <!-- Default exception handlers from CUBA -->
+    <bean class="com.haulmont.cuba.portal.sys.exceptions.PortalExceptionResolver">
+        <property name="noUserSessionUrl" value="/login"/>
+        <property name="noMiddlewareConnectionUrl" value="/maintain"/>
+    </bean>
+
+</beans>

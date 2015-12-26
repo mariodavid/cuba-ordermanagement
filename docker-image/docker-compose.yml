@@ -1,0 +1,9 @@
+web:
+  image: cuba-ordermanagement
+  ports:
+   - "8080:8080"
+  links:
+   - postgres:postgres
+
+postgres:
+  image: postgres

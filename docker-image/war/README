@@ -1,0 +1,4 @@
+Just put your war files generated via:
+ - "./gradlew buildWar"
+
+ from $PROJECT_ROOT/build/distribution/war/*.war

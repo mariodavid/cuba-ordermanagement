@@ -1,0 +1,75 @@
+insert into OM_PRODUCT_CATEGORY
+(NAME, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
+values ('Tablet', 1, '2015-11-14 20:08:40', null, null, null, '13bcc20d-1975-1137-913b-be17e74de1e3', '2015-11-14 20:08:40', 'admin');
+
+insert into OM_PRODUCT_CATEGORY
+(NAME, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
+values ('Not so smart phone', 1, '2015-11-14 20:08:55', null, null, null, '38ca386a-f23c-700b-e3fc-dbe2b1e0370f', '2015-11-14 20:08:55', 'admin');
+
+insert into OM_PRODUCT_CATEGORY
+(NAME, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
+values ('Smartphone', 1, '2015-11-14 20:08:45', null, null, null, 'db45e357-64ab-5d6b-154f-86a8adc78e0f', '2015-11-14 20:08:45', 'admin');
+
+
+
+insert into OM_PRODUCT
+(NAME, CATEGORY_ID, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
+values ('Nokia 8810', '38ca386a-f23c-700b-e3fc-dbe2b1e0370f', 1, '2015-11-14 20:09:07', null, null, null, '43170403-a54b-6303-74e6-ed1ff36857b9', '2015-11-14 20:09:07', 'admin');
+
+insert into OM_PRODUCT
+(NAME, CATEGORY_ID, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
+values ('Apple iPad Air', '13bcc20d-1975-1137-913b-be17e74de1e3', 2, '2015-11-14 20:11:29', 'admin', null, null, '607c8f27-5b4a-15aa-4e5b-66efec5f4415', '2015-11-14 20:09:59', 'admin');
+
+insert into OM_PRODUCT
+(NAME, CATEGORY_ID, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
+values ('Samsung Galaxy Tab S2', '13bcc20d-1975-1137-913b-be17e74de1e3', 1, '2015-11-14 20:10:15', null, null, null, '888972d1-2883-6bf8-e4e8-88e71c5a589d', '2015-11-14 20:10:15', 'admin');
+
+insert into OM_PRODUCT
+(NAME, CATEGORY_ID, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
+values ('Samsung Galaxy S6', 'db45e357-64ab-5d6b-154f-86a8adc78e0f', 1, '2015-11-14 20:12:04', null, null, null, '88a71e28-4156-39b0-385e-d5a2d88ef73c', '2015-11-14 20:12:04', 'admin');
+
+insert into OM_PRODUCT
+(NAME, CATEGORY_ID, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
+values ('Apple iPhone 6', 'db45e357-64ab-5d6b-154f-86a8adc78e0f', 1, '2015-11-14 20:12:22', null, null, null, '926aabad-2a53-c7fa-dc23-9ce343cebc5b', '2015-11-14 20:12:22', 'admin');
+
+insert into OM_PRODUCT
+(NAME, CATEGORY_ID, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
+values ('Apple iPhone 6S', 'db45e357-64ab-5d6b-154f-86a8adc78e0f', 1, '2015-11-14 20:09:38', null, null, null, 'a022e550-b708-2e0d-7be8-b9f3ecadbd68', '2015-11-14 20:09:38', 'admin');
+
+insert into OM_PRODUCT
+(NAME, CATEGORY_ID, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
+values ('Nokia 6310', '38ca386a-f23c-700b-e3fc-dbe2b1e0370f', 1, '2015-11-14 20:09:19', null, null, null, 'adbfdf9a-a5c5-27b2-7479-fb7fbb04d3d5', '2015-11-14 20:09:19', 'admin');
+
+
+
+insert into OM_CUSTOMER
+(NAME, FIRSTNAME, STREET, POSTCODE, CITY, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
+values ('Witte', 'Jim', '4368 Ashmor Drive', '56401', 'Brainerd, MN', 3, '2015-11-17 19:03:06', 'admin', null, null, '4f12c1ad-ba45-edce-5141-a61e2fffb949', '2015-11-17 18:51:06', 'admin');
+
+insert into OM_CUSTOMER
+(NAME, FIRSTNAME, STREET, POSTCODE, CITY, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
+values ('Square', 'Misty', '3367 Edgewood Road', '71603', 'Pine Bluff, AR', 1, '2015-11-17 19:03:36', null, null, null, '52d83aa7-fd2d-485d-9185-cd98e37a22a6', '2015-11-17 19:03:36', 'admin');
+
+insert into OM_CUSTOMER
+(NAME, FIRSTNAME, STREET, POSTCODE, CITY, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
+values ('Amon', 'Kristen C.', '485 Libby Street', '90025', 'West Los Angeles, CA', 1, '2015-11-17 19:04:06', null, null, null, 'b1f9102d-c870-7bc7-1535-a27e1bc89d30', '2015-11-17 19:04:06', 'admin');
+
+
+insert into OM_ORDER
+(ORDER_DATE, CUSTOMER_ID, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
+values ('2015-11-18', '4f12c1ad-ba45-edce-5141-a61e2fffb949', 1, '2015-11-17 19:06:53', null, null, null, 'b107176e-ab74-8102-c781-efb75b12f805', '2015-11-17 19:06:53', 'admin');
+
+insert into OM_LINE_ITEM
+(POSITION_, PRODUCT_ID, QUANTITY, QUANTITY_UNIT, UNIT_PRICE, TOTAL_PRICE, ORDER_ID, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
+values (1, '43170403-a54b-6303-74e6-ed1ff36857b9', 1, 'pc', 199.00, 199.00, 'b107176e-ab74-8102-c781-efb75b12f805', 1, '2015-11-17 19:06:53', null, null, null, '8e69ca36-0bb4-38f4-83fe-76cad6444288', '2015-11-17 19:06:53', 'admin');
+
+
+insert into OM_ORDER
+(ORDER_DATE, CUSTOMER_ID, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
+values ('2015-11-15', '52d83aa7-fd2d-485d-9185-cd98e37a22a6', 1, '2015-11-17 19:07:42', null, null, null, 'd40fa9db-6171-ebe5-909d-6072a4ba5ced', '2015-11-17 19:07:42', 'admin');
+insert into OM_LINE_ITEM
+(POSITION_, PRODUCT_ID, QUANTITY, QUANTITY_UNIT, UNIT_PRICE, TOTAL_PRICE, ORDER_ID, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
+values (1, 'a022e550-b708-2e0d-7be8-b9f3ecadbd68', 1, 'pc', 499.00, 499.00, 'd40fa9db-6171-ebe5-909d-6072a4ba5ced', 1, '2015-11-17 19:07:42', null, null, null, '3298e766-e717-7ef7-ccbf-2d4727902a77', '2015-11-17 19:07:42', 'admin');
+insert into OM_LINE_ITEM
+(POSITION_, PRODUCT_ID, QUANTITY, QUANTITY_UNIT, UNIT_PRICE, TOTAL_PRICE, ORDER_ID, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
+values (2, 'adbfdf9a-a5c5-27b2-7479-fb7fbb04d3d5', 1, 'pc', 149.00, 149.00, 'd40fa9db-6171-ebe5-909d-6072a4ba5ced', 1, '2015-11-17 19:07:42', null, null, null, 'c9f59770-fad5-12fb-f72c-4b58d898877d', '2015-11-17 19:07:42', 'admin');
