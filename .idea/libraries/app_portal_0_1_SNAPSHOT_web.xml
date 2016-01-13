@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="app-portal-0.1-SNAPSHOT-web">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/modules/portal/build/distributions/app-portal-0.1-SNAPSHOT-web.zip!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

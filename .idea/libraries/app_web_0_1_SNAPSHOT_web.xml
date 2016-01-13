@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="app-web-0.1-SNAPSHOT-web">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/modules/web/build/distributions/app-web-0.1-SNAPSHOT-web.zip!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
