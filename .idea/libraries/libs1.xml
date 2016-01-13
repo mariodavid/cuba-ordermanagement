@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="libs1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/modules/portal/build/libs/app-portal-0.1-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/modules/portal/build/libs/app-portal-0.1-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="app-core-0.1-SNAPSHOT-db">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/modules/core/build/distributions/app-core-0.1-SNAPSHOT-db.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -26,6 +26,7 @@
                 <action id="create"/>
                 <action id="edit"/>
                 <action id="remove"/>
+                <action id="latestOrderDate" invoke="latestOrderDate" caption="msg://latestOrderDate"/>
             </actions>
             <columns>
                 <column id="orderDate"/>
@@ -41,6 +42,9 @@
                         action="ordersTable.edit"/>
                 <button id="removeBtn"
                         action="ordersTable.remove"/>
+
+
+                <button action="ordersTable.latestOrderDate"/>
             </buttonsPanel>
         </table>
     </layout>

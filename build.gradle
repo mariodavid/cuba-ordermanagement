@@ -1,7 +1,7 @@
 
 
 buildscript {
-    ext.cubaVersion = '6.0.2'
+    ext.cubaVersion = '6.0.6'
     repositories {
         maven {
             url 'https://repo.cuba-platform.com/content/groups/work'
@@ -46,13 +46,38 @@ cuba {
     }
 }
 
-def postgres = 'org.postgresql:postgresql:9.4-1201-jdbc41'
+def hsql = 'org.hsqldb:hsqldb:2.2.9'
 
 configure([globalModule, coreModule, guiModule, webModule, portalModule]) {
     apply(plugin: 'java')
     apply(plugin: 'maven')
     apply(plugin: 'idea')
     apply(plugin: 'cuba')
+
+
+    apply(plugin: 'groovy')
+    sourceSets {
+        main {
+            groovy {
+                srcDirs = ['src']
+            }
+        }
+        test {
+            groovy {
+                srcDirs = ['test']
+            }
+        }
+    }
+
+
+    dependencies {
+        testCompile('junit:junit:4.5')
+        testCompile('org.spockframework:spock-core:1.0-groovy-2.0')
+//        testCompile "org.hamcrest:hamcrest-core:1.3"
+//        testRuntime "cglib:cglib-nodep:3.1"
+//        testRuntime "org.objenesis:objenesis:2.1"
+    }
+
 
     dependencies {
         testCompile('junit:junit:4.12')
@@ -88,8 +113,8 @@ configure(coreModule) {
     dependencies {
         compile(globalModule)
         provided(servletApi)
-        jdbc(postgres)
-        testRuntime(postgres)
+        jdbc(hsql)
+        testRuntime(hsql)
         compile("com.haulmont.cuba:cuba-core:$cubaVersion")
         testCompile("com.haulmont.cuba:cuba-core:$cubaVersion:tests")
         testCompile("com.haulmont.cuba:cuba-shared-lib:$cubaVersion")
@@ -113,19 +138,19 @@ configure(coreModule) {
     }
 
     task createDb(dependsOn: assembleDbScripts, description: 'Creates local database', type: CubaDbCreation) {
-        dbms = 'postgres'
-        host = '192.168.195.157'
-        dbName = 'postgres'
-        dbUser = 'postgres'
-        dbPassword = 'postgres'
+        dbms = 'hsql'
+        host = 'localhost'
+        dbName = 'om'
+        dbUser = 'sa'
+        dbPassword = ''
     }
 
     task updateDb(dependsOn: assembleDbScripts, description: 'Updates local database', type: CubaDbUpdate) {
-        dbms = 'postgres'
-        host = '192.168.195.157'
-        dbName = 'postgres'
-        dbUser = 'postgres'
-        dbPassword = 'postgres'
+        dbms = 'hsql'
+        host = 'localhost'
+        dbName = 'om'
+        dbUser = 'sa'
+        dbPassword = ''
     }
 }
 

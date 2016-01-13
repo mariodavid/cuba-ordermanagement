@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/modules/web/build/libs/app-web-0.1-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/modules/web/build/libs/app-web-0.1-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
