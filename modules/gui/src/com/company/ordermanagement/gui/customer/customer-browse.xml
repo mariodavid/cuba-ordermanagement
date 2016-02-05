@@ -33,6 +33,7 @@
                 <column id="street"/>
                 <column id="postcode"/>
                 <column id="city"/>
+                <column id="state"/>
             </columns>
             <rows datasource="customersDs"/>
             <rowsCount/>

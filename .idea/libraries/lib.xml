@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/tomcat/webapps/app/WEB-INF/lib/cuba-web-6.0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/tomcat/webapps/app/WEB-INF/lib/app-web-0.1-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/tomcat/webapps/app/WEB-INF/lib/cuba-global-6.0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/tomcat/webapps/app/WEB-INF/lib/cuba-gui-6.0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/tomcat/webapps/app/WEB-INF/lib/cuba-web-auth-6.0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/tomcat/webapps/app/WEB-INF/lib/cuba-client-6.0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/tomcat/webapps/app/WEB-INF/lib/app-gui-0.1-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/tomcat/webapps/app/WEB-INF/lib/app-global-0.1-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -36,5 +36,6 @@
         <property name="city"/>
         <property name="orders"
                   view="_local"/>
+        <property name="state"/>
     </view>
 </views>

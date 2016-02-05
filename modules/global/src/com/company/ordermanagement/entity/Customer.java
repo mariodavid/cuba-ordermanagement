@@ -35,8 +35,20 @@ public class Customer extends StandardEntity {
     @Column(name = "CITY", nullable = false)
     protected String city;
 
+    @Column(name = "STATE")
+    protected String state;
+
     @OneToMany(mappedBy = "customer")
     protected Set<Order> orders;
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getState() {
+        return state;
+    }
+
 
     public void setOrders(Set<Order> orders) {
         this.orders = orders;

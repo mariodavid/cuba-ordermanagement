@@ -20,6 +20,7 @@
                 <field id="street"/>
                 <field id="postcode"/>
                 <field id="city"/>
+                <field id="state"/>
             </column>
         </fieldGroup>
         <frame id="windowActions"

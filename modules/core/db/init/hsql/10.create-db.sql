@@ -86,6 +86,7 @@ create table OM_CUSTOMER (
     STREET varchar(255) not null,
     POSTCODE varchar(255) not null,
     CITY varchar(255) not null,
+    STATE varchar(255),
     --
     primary key (ID)
 )^
