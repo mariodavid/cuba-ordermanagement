@@ -26,6 +26,8 @@
             <map>
                 <entry key="om_OrderService"
                        value="com.company.ordermanagement.service.OrderService"/>
+                <entry key="om_DeepLinkService"
+                       value="com.company.ordermanagement.service.DeepLinkService"/>
             </map>
         </property>
     </bean>

@@ -27,6 +27,7 @@
                 <action id="edit"/>
                 <action id="remove"/>
                 <action id="latestOrderDate" invoke="latestOrderDate" caption="msg://latestOrderDate"/>
+                <action id="showDeepLink" invoke="showDeepLink" caption="msg://showDeepLink"/>
             </actions>
             <columns>
                 <column id="orderDate"/>
@@ -45,6 +46,8 @@
 
 
                 <button action="ordersTable.latestOrderDate"/>
+
+                <button action="ordersTable.showDeepLink"/>
             </buttonsPanel>
         </table>
     </layout>

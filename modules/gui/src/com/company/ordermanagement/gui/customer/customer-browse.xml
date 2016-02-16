@@ -26,6 +26,7 @@
                 <action id="create"/>
                 <action id="edit"/>
                 <action id="remove"/>
+                <action id="showDeepLink" invoke="showDeepLink" caption="msg://showDeepLink"/>
             </actions>
             <columns>
                 <column id="name"/>
@@ -44,6 +45,9 @@
                         action="customersTable.edit"/>
                 <button id="removeBtn"
                         action="customersTable.remove"/>
+
+
+                <button action="customersTable.showDeepLink"/>
             </buttonsPanel>
         </table>
     </layout>
