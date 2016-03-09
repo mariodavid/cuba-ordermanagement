@@ -37,9 +37,11 @@ public class OrderBrowse extends AbstractLookup {
 
     void showDeepLink(Component component) {
 
-        String deepLink = deepLinkService.generateDeepLinkForEntity(ordersDs.item)
+        Order order = ordersDs.item
+        String deepLink = deepLinkService.generateDeepLinkForEntity(order)
+        String title = "Deep Link: " + order.getInstanceName();
 
-        showNotification(deepLink, Frame.NotificationType.TRAY)
+        showMessageDialog(title, deepLink, Frame.MessageType.CONFIRMATION);
 
     }
 

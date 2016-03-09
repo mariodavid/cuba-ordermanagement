@@ -120,6 +120,9 @@ configure(coreModule) {
         testCompile("com.haulmont.cuba:cuba-shared-lib:$cubaVersion")
         dbscripts("com.haulmont.cuba:cuba-core:$cubaVersion:db@zip")
 
+        compile('org.springframework.cloud:spring-cloud-spring-service-connector:1.2.1.RELEASE')
+        compile('org.springframework.cloud:spring-cloud-cloudfoundry-connector:1.2.1.RELEASE')
+
     }
 
     task cleanConf(description: 'Cleans up conf directory') << {
@@ -306,10 +309,21 @@ task wrapper(type: Wrapper) {
 }
 
 
+//task buildWar(type: CubaWarBuilding) {
+//    coreProject = project(':app-core')
+//    webProject = project(':app-web')
+//    appName = 'app'
+//    appHome = '/opt/cuba_home'
+//    singleWar = false
+//}
+
+//task buildWar(type: CubaWarBuilding) {
+//    appHome = '${app.home}'
+//    singleWar = true
+//}
+
 task buildWar(type: CubaWarBuilding) {
-    coreProject = project(':app-core')
-    webProject = project(':app-web')
-    appName = 'app'
-    appHome = '/opt/cuba_home'
-    singleWar = false
+    appHome = '..'
+    appProperties = ['cuba.automaticDatabaseUpdate': 'true']
+    webXml = "${webModule.projectDir}/web/WEB-INF/single-war-web.xml"
 }

@@ -8,7 +8,7 @@ ADD container-files/tomcat-users.xml /usr/local/tomcat/conf/
 
 # Add generated app war files to the webapps directory
 ADD war/app.war /usr/local/tomcat/webapps/
-ADD war/app-core.war /usr/local/tomcat/webapps/
+# ADD war/app-core.war /usr/local/tomcat/webapps/
 
 # Add context config file for the application
 ADD container-files/context.xml /usr/local/tomcat/conf/

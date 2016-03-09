@@ -30,8 +30,9 @@ public class CustomerBrowse extends AbstractLookup {
 
         Customer customer = customersDs.getItem();
         String deepLink = deepLinkService.generateDeepLinkForEntity(customer);
+        String title = "Deep Link: " + customer.getInstanceName();
 
-        showMessageDialog("Deep Link: " + customer.getInstanceName(), deepLink, MessageType.CONFIRMATION);
+        showMessageDialog(title, deepLink, MessageType.CONFIRMATION);
     }
 
 }

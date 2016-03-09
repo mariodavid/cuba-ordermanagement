@@ -1,0 +1,12 @@
+---
+applications:
+- name: cuba-ordermanagement
+memory: 1024M
+instances: 1
+host: cuba-ordermanagement
+path: build/distributions/war/app.war
+services:
+- cuba-ordermanagement-postgres
+env:
+  JBP_CONFIG_LIBERTY: "app_archive: {features: [jsp-2.3, jdbc-4.0]}"
+  JBP_CONFIG_IBMJDK: "version: 1.8.+"

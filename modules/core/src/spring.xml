@@ -12,4 +12,11 @@
     <!-- Annotation-based beans -->
     <context:component-scan base-package="com.company.ordermanagement"/>
 
+    <bean id="dataSourceCreator" class="com.haulmont.cuba.DatasourceCreator">
+        <property name="dbServiceName" value="cuba-ordermanagement-postgres"/><!--DB SERVICE NAME IN CloudFoundry-->
+    </bean>
+
+    <bean id="cubaDataSource" factory-bean="dataSourceCreator"
+          factory-method="createDataSource">
+    </bean>
 </beans>
