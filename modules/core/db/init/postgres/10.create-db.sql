@@ -1,6 +1,6 @@
 -- begin OM_PRODUCT_CATEGORY
 create table OM_PRODUCT_CATEGORY (
-    ID uuid,
+    ID varchar(36) not null,
     CREATE_TS timestamp,
     CREATED_BY varchar(50),
     VERSION integer,
@@ -16,7 +16,7 @@ create table OM_PRODUCT_CATEGORY (
 -- end OM_PRODUCT_CATEGORY
 -- begin OM_PRODUCT
 create table OM_PRODUCT (
-    ID uuid,
+    ID varchar(36) not null,
     CREATE_TS timestamp,
     CREATED_BY varchar(50),
     VERSION integer,
@@ -26,14 +26,14 @@ create table OM_PRODUCT (
     DELETED_BY varchar(50),
     --
     NAME varchar(255) not null,
-    CATEGORY_ID uuid not null,
+    CATEGORY_ID varchar(36) not null,
     --
     primary key (ID)
 )^
 -- end OM_PRODUCT
 -- begin OM_LINE_ITEM
 create table OM_LINE_ITEM (
-    ID uuid,
+    ID varchar(36) not null,
     CREATE_TS timestamp,
     CREATED_BY varchar(50),
     VERSION integer,
@@ -43,19 +43,19 @@ create table OM_LINE_ITEM (
     DELETED_BY varchar(50),
     --
     POSITION_ integer not null,
-    PRODUCT_ID uuid not null,
+    PRODUCT_ID varchar(36) not null,
     QUANTITY integer not null,
     QUANTITY_UNIT varchar(50) not null,
     UNIT_PRICE decimal(19, 2) not null,
     TOTAL_PRICE decimal(19, 2) not null,
-    ORDER_ID uuid not null,
+    ORDER_ID varchar(36) not null,
     --
     primary key (ID)
 )^
 -- end OM_LINE_ITEM
 -- begin OM_ORDER
 create table OM_ORDER (
-    ID uuid,
+    ID varchar(36) not null,
     CREATE_TS timestamp,
     CREATED_BY varchar(50),
     VERSION integer,
@@ -65,14 +65,14 @@ create table OM_ORDER (
     DELETED_BY varchar(50),
     --
     ORDER_DATE date not null,
-    CUSTOMER_ID uuid not null,
+    CUSTOMER_ID varchar(36) not null,
     --
     primary key (ID)
 )^
 -- end OM_ORDER
 -- begin OM_CUSTOMER
 create table OM_CUSTOMER (
-    ID uuid,
+    ID varchar(36) not null,
     CREATE_TS timestamp,
     CREATED_BY varchar(50),
     VERSION integer,
