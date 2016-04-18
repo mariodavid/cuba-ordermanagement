@@ -3,6 +3,8 @@
  */
 package com.company.ordermanagement.portal.controllers;
 
+import com.company.ordermanagement.entity.Product;
+import com.company.ordermanagement.portal.command.LoginUserCommand;
 import com.haulmont.cuba.core.app.DataService;
 import com.haulmont.cuba.core.global.LoadContext;
 import com.haulmont.cuba.portal.security.PortalSessionProvider;
@@ -26,9 +28,15 @@ public class PortalController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model) {
         if (PortalSessionProvider.getUserSession().isAuthenticated()) {
-            LoadContext l = new LoadContext(User.class);
-            l.setQueryString("select u from sec$User u");
-            model.addAttribute("users", dataService.loadList(l));
+            LoadContext l = new LoadContext(Product.class);
+            l.setQueryString("select p from om$Product p");
+            model.addAttribute("products", dataService.loadList(l));
+
+
+        }
+        else {
+            final LoginUserCommand loginUserCommand = new LoginUserCommand();
+            model.addAttribute(loginUserCommand);
         }
         return "index";
     }

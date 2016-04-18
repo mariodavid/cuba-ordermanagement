@@ -8,7 +8,10 @@
     <dsContext>
         <datasource id="productDs"
                     class="com.company.ordermanagement.entity.Product"
-                    view="product-view"/>
+                    view="product-view">
+            <collectionDatasource id="imagesDs"
+                                  property="images"/>
+        </datasource>
     </dsContext>
     <layout expand="windowActions"
             spacing="true">
@@ -17,8 +20,32 @@
             <column width="250px">
                 <field id="name"/>
                 <field id="category"/>
+                <field id="description"
+                       rows="5"/>
             </column>
         </fieldGroup>
+        <groupBox id="imagesBox"
+                  caption="msg://com.company.ordermanagement.entity/Product.images">
+            <table id="imagesTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="add"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="name"/>
+                    <column id="extension"/>
+                    <column id="size"/>
+                    <column id="createDate"/>
+                </columns>
+                <rows datasource="imagesDs"/>
+                <buttonsPanel>
+                    <button action="imagesTable.add"/>
+                    <button action="imagesTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
         <frame id="windowActions"
                screen="editWindowActions"/>
     </layout>

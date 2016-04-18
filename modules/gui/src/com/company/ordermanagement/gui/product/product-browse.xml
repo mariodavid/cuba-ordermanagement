@@ -32,6 +32,7 @@
             <columns>
                 <column id="name"/>
                 <column id="category"/>
+                <column id="description"/>
             </columns>
             <rows datasource="productsDs"/>
             <rowsCount/>

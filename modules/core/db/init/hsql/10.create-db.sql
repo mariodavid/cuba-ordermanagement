@@ -19,7 +19,7 @@ create table OM_PRODUCT (
     ID varchar(36) not null,
     CREATE_TS timestamp,
     CREATED_BY varchar(50),
-    VERSION integer,
+    VERSION integer not null,
     UPDATE_TS timestamp,
     UPDATED_BY varchar(50),
     DELETE_TS timestamp,
@@ -27,6 +27,7 @@ create table OM_PRODUCT (
     --
     NAME varchar(255) not null,
     CATEGORY_ID varchar(36) not null,
+    DESCRIPTION longvarchar,
     --
     primary key (ID)
 )^
@@ -90,3 +91,10 @@ create table OM_CUSTOMER (
     primary key (ID)
 )^
 -- end OM_CUSTOMER
+-- begin OM_PRODUCT_FILE_DESCRIPTOR_LINK
+create table OM_PRODUCT_FILE_DESCRIPTOR_LINK (
+    PRODUCT_ID varchar(36) not null,
+    FILE_DESCRIPTOR_ID varchar(36) not null,
+    primary key (PRODUCT_ID, FILE_DESCRIPTOR_ID)
+)^
+-- end OM_PRODUCT_FILE_DESCRIPTOR_LINK

@@ -5,6 +5,9 @@
         <property name="name"/>
         <property name="category"
                   view="_minimal"/>
+        <property name="description"/>
+        <property name="images"
+                  view="_local"/>
     </view>
     <view class="com.company.ordermanagement.entity.LineItem"
           name="lineItem-view">
