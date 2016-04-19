@@ -12,11 +12,7 @@
     <link rel="stylesheet" href="<@spring.url "/resources/bootstrap/css/bootstrap.min.css"/>"/>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js"/>"></script>
     <script type="text/javascript" src="<@spring.url "/resources/bootstrap/js/bootstrap.min.js"/>"></script>
-    <script>
-        $(function () {
-            $('[data-toggle="popover"]').popover()
-        })
-    </script>
+
 </head>
 <body>
 
@@ -26,21 +22,42 @@
 <div class="container">
     <div class="row">
 
-    <#if userSession?? && userSession.authenticated>
-        <div class="col-md-12">
+    <#--<#if userSession?? && userSession.authenticated>-->
+        <div class="col-md-4">
             <h2>All Products</h2>
 
-            <ul>
+            <div class="list-group">
                 <#list products as product>
-                    <li data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">${product.name}</li>
-
+                    <#if product.description??>
+                        <a class="list-group-item product"
+                                data-title="${product.name}"
+                                data-content="${product.description}">
+                        ${product.name}
+                        </a>
+                    <#else>
+                        <a class="list-group-item product"
+                           data-title="${product.name}"
+                            data-content="">
+                            ${product.name}
+                        </a>
+                    </#if>
 
 
                 </#list>
-            </ul>
+            </div>
         </div>
 
-    </#if>
+        <div class="col-sm-8" id="product-detail-column"  style="display: none">
+
+            <h2>Productinformation</h2>
+            <div class="panel panel-default" id="product-details">
+                <div class="panel-heading"></div>
+                <div class="panel-body"></div>
+            </div>
+
+        </div>
+
+    <#--</#if>-->
     </div>
 
 
@@ -50,6 +67,52 @@
         <p>© 2016 CUBA-ordermanagement Inc.</p>
     </footer>
 </div>
+
+<script>
+    $(function () {
+        $(".product").click(function() {
+
+            var productElement = this;
+
+            setProductActiveState(productElement);
+
+            $("#product-detail-column").fadeOut("fast", function() {
+
+                var product = readProductDetailsFromElement(productElement);
+                changeProductDetails(product);
+
+                $("#product-detail-column").fadeIn("fast");
+            });
+
+        })
+    });
+
+    function setProductActiveState(productElement) {
+        $(".product").removeClass("active");
+        $(productElement).addClass("active");
+    }
+
+
+    function readProductDetailsFromElement(productElement) {
+        return {
+            title: $(productElement).data("title"),
+            content: $(productElement).data("content"),
+        }
+    }
+
+    function changeProductDetails(product) {
+        $("#product-details .panel-heading").html(product.title)
+
+        if (product.content) {
+            $("#product-details .panel-body").html(product.content)
+        }
+        else {
+            $("#product-details .panel-body").html('<div class="alert alert-warning">No description available</div>')
+        }
+    }
+
+</script>
 </body>
 </html>
+
 

@@ -27,17 +27,15 @@ public class PortalController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model) {
-        if (PortalSessionProvider.getUserSession().isAuthenticated()) {
-            LoadContext l = new LoadContext(Product.class);
-            l.setQueryString("select p from om$Product p");
-            model.addAttribute("products", dataService.loadList(l));
-
-
-        }
-        else {
+        if (!PortalSessionProvider.getUserSession().isAuthenticated()) {
             final LoginUserCommand loginUserCommand = new LoginUserCommand();
             model.addAttribute(loginUserCommand);
         }
+        LoadContext l = LoadContext.create(Product.class).setView("product-view");
+        l.setQueryString("select p from om$Product p");
+        model.addAttribute("products", dataService.loadList(l));
+
+
         return "index";
     }
 }
