@@ -3,9 +3,7 @@
 
 <html>
 <head>
-    <title>
-        Cuba Portal
-    </title>
+    <title> CUBA-ordermanagement </title>
     <link rel="shortcut icon" type="image/x-icon" href="<@spring.url "/resources/favicon.ico"/>">
     <link rel="icon" type="image/gif" href="<@spring.url "/resources/favicon.ico"/>">
     <link rel="stylesheet" href="<@spring.url "/resources/css/common.css"/>"/>
@@ -22,7 +20,6 @@
 <div class="container">
     <div class="row">
 
-    <#--<#if userSession?? && userSession.authenticated>-->
         <div class="col-md-4">
             <h2>All Products</h2>
 
@@ -57,7 +54,6 @@
 
         </div>
 
-    <#--</#if>-->
     </div>
 
 
