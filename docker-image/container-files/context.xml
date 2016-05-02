@@ -6,7 +6,7 @@
               maxWait="5000"
               name="jdbc/CubaDS"
               username="postgres"
-              password=""
+              password="postgres"
               type="javax.sql.DataSource"
               url="jdbc:postgresql://postgres:5432/postgres"
               />

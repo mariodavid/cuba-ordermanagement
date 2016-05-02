@@ -1,9 +1,27 @@
-web:
-  image: cuba-ordermanagement
-  ports:
-   - "8080:8080"
-  links:
-   - postgres:postgres
+version: '2'
 
-postgres:
-  image: postgres
+services:
+  web:
+    image: cuba-ordermanagement
+    ports:
+     - "8080:8080"
+    networks:
+      - ordermanagement-network
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    networks:
+      - ordermanagement-network
+
+networks:
+  ordermanagement-network:
+
+
+
+
+
+
+
+
+
