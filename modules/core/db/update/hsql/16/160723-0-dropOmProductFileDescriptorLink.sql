@@ -1,0 +1,1 @@
+drop table OM_PRODUCT_FILE_DESCRIPTOR_LINK cascade ;

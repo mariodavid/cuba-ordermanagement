@@ -1,0 +1,21 @@
+#!/bin/bash
+
+APP_NAME=$1
+APP_COMPONENT=$2
+IMAGE_VERSION=$3
+ECR_REGISTRY_HOST=$4
+
+IMAGE_NAME=${APP_NAME}-${APP_COMPONENT}
+
+
+echo "App name: ${APP_NAME}"
+echo "App component: ${APP_COMPONENT}"
+echo "Image version: ${IMAGE_VERSION}"
+echo "ECR registry host: ${ECR_REGISTRY_HOST}"
+
+
+docker tag ${IMAGE_NAME}:${IMAGE_VERSION} ${ECR_REGISTRY_HOST}/${IMAGE_NAME}:${IMAGE_VERSION}
+docker push ${ECR_REGISTRY_HOST}/${IMAGE_NAME}:${IMAGE_VERSION}
+
+docker rmi ${IMAGE_NAME}:${IMAGE_VERSION}
+docker rmi ${ECR_REGISTRY_HOST}/${IMAGE_NAME}:${IMAGE_VERSION}

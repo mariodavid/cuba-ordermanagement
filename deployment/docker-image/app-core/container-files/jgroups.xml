@@ -1,0 +1,44 @@
+
+<config xmlns="urn:org:jgroups"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="urn:org:jgroups http://www.jgroups.org/schema/jgroups.xsd">
+
+    <TUNNEL
+            gossip_router_hosts="${jgroups.gossip_router_hosts}"
+
+            bind_port="7800"
+            bind_addr="GLOBAL"
+
+            external_addr="${jgroups.external_addr}"
+            external_port="${jgroups.external_port:7800}"
+    />
+
+    <PING />
+
+    <MERGE3 min_interval="10000"
+            max_interval="30000"/>
+
+    <FD timeout="3000"
+        max_tries="3"/>
+    <FD_ALL />
+    <VERIFY_SUSPECT timeout="1500"/>
+    <BARRIER/>
+    <pbcast.NAKACK2 use_mcast_xmit="false"
+                    discard_delivered_msgs="true"/>
+    <UNICAST3/>
+    <pbcast.STABLE stability_delay="1000"
+                   desired_avg_gossip="50000"
+                   max_bytes="4M"/>
+
+    <pbcast.GMS print_local_addr="true"
+                join_timeout="2000"
+                view_bundling="true"/>
+
+    <MFC max_credits="2M"
+         min_threshold="0.4"/>
+    <FRAG2 frag_size="60K"/>
+    <RSVP resend_interval="2000"
+          timeout="10000"/>
+    <pbcast.STATE_TRANSFER/>
+
+</config>

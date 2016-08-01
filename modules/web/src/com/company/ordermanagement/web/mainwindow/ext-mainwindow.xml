@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        class="com.company.ordermanagement.web.mainwindow.ExtAppMainWindow"
+        extends="/com/haulmont/cuba/web/app/mainwindow/mainwindow.xml"
+        xmlns:main="http://schemas.haulmont.com/cuba/mainwindow.xsd">
+    <layout>
+        <split id="foldersSplit">
+            <main:workArea id="workArea">
+                <main:initialLayout>
+                    <embedded id="metabaseDashboard"
+                              height="400px"
+                              width="600px"/>
+                </main:initialLayout>
+            </main:workArea>
+        </split>
+    </layout>
+</window>

@@ -1,14 +1,14 @@
-<Context>
+    <Context>
     <!-- Database connection -->
     <Resource driverClassName="org.postgresql.Driver"
               maxActive="20"
               maxIdle="2"
               maxWait="5000"
               name="jdbc/CubaDS"
-              username="postgres"
-              password="postgres"
+              username="${db.username}"
+              password="${db.password}"
               type="javax.sql.DataSource"
-              url="jdbc:postgresql://postgres:5432/postgres"
+              url="jdbc:postgresql://${db.host}:${db.port}/${db.name}"
               />
     
     <Manager pathname=""/>
