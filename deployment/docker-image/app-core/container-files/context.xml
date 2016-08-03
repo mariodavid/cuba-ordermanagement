@@ -1,4 +1,4 @@
-    <Context>
+<Context>
     <!-- Database connection -->
     <Resource driverClassName="org.postgresql.Driver"
               maxActive="20"
@@ -10,6 +10,6 @@
               type="javax.sql.DataSource"
               url="jdbc:postgresql://${db.host}:${db.port}/${db.name}"
               />
-    
+
     <Manager pathname=""/>
 </Context>

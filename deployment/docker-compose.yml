@@ -6,13 +6,16 @@ services:
   app-core:
     image: cuba-ordermanagement-app-core:latest
     environment:
-      - DB_HOST=postgres
-      - DB_PORT=5432
-      - DB_USERNAME=postgres
-      - DB_PASSWORD=postgres
-      - DB_NAME=postgres
+      - CUBA_CLUSTER_ENABLED=false
+      - CUBA_WEB_PORT=8080
+      - CUBA_WEB_HOST_NAME=localhost
+      - CUBA_DB_HOST=postgres
+      - CUBA_DB_PORT=5432
+      - CUBA_DB_USERNAME=postgres
+      - CUBA_DB_PASSWORD=postgres
+      - CUBA_DB_NAME=postgres
     networks:
-      - clover-network
+      - cuba-network
 
 
   app:
@@ -20,25 +23,18 @@ services:
     ports:
      - "8080:8080"
     environment:
-     - CORE_URL_CONNECTION_LIST=http://app-core:8080/app-core
+     - CUBA_CORE_URL_CONNECTION_LIST=http://app-core:8080
+     - CUBA_WEB_PORT=8080
+     - CUBA_WEB_HOST_NAME=192.168.99.100
     networks:
-      - clover-network
-
-
-  app-portal:
-    image: cuba-ordermanagement-app-portal:latest
-    ports:
-     - "8081:8080"
-    networks:
-      - clover-network
-
+      - cuba-network
 
   postgres:
     image: postgres
     environment:
       - POSTGRES_PASSWORD=postgres
     networks:
-      - clover-network
+      - cuba-network
 
 networks:
-  clover-network:
+  cuba-network:

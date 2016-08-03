@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set +x;
 
-source docker-image/environments/jenkins/ecs/bash-print-functions.sh
+source deployment/ecs/scripts/bash-print-functions.sh
 
 # script parameters
 TEMPLATE_FILE=$1
