@@ -37,29 +37,7 @@ fi
 
 
 ####################################################################
-## registering new task revision (app-core)
-####################################################################
-
-SERVICE_NAME="${APP_NAME}-service-core"
-CLUSTER_NAME="${APP_NAME}-cluster-core"
-TASK_FAMILY="${APP_NAME}"
-
-printHeader "Register task definition"
-deployment/ecs/scripts/register-task.sh "deployment/ecs/task-definitions/${APP_NAME}-middleware-task-definition-template.json" ${APP_VERSION} ${TASK_FAMILY}
-
-
-####################################################################
-## update ecs service with new task revision (app-core)
-####################################################################
-
-printHeader "Update ECS service"
-deployment/ecs/scripts/update-ecs-service.sh ${CLUSTER_NAME} ${SERVICE_NAME} ${TASK_FAMILY}
-
-
-
-
-####################################################################
-## registering new task revision (app)
+## registering new task revision
 ####################################################################
 
 SERVICE_NAME="${APP_NAME}-service"
@@ -67,11 +45,11 @@ CLUSTER_NAME="${APP_NAME}-cluster"
 TASK_FAMILY="${APP_NAME}"
 
 printHeader "Register task definition"
-deployment/ecs/scripts/register-task.sh "deployment/ecs/task-definitions/${APP_NAME}-web-task-definition-template.json" ${APP_VERSION} ${TASK_FAMILY}
+deployment/ecs/scripts/register-task.sh "deployment/ecs/task-definitions/${APP_NAME}-template.json" ${APP_VERSION} ${TASK_FAMILY}
 
 
 ####################################################################
-## update ecs service with new task revision (app)
+## update ecs service with new task revision
 ####################################################################
 
 printHeader "Update ECS service"

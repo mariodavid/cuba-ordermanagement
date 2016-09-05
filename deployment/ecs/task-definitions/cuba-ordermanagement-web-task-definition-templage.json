@@ -1,0 +1,43 @@
+{
+  "family": "cuba-ordermanagement",
+  "containerDefinitions": [
+    {
+      "memory": 512,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "name": "cuba-ordermanagement-app",
+      "image": "1234567890.dkr.ecr.us-east-1.amazonaws.com/cuba-ordermanagement-app:%CUBA_VERSION%",
+      "cpu": 340,
+      "environment": [
+        {
+          "name": "CUBA_ECS",
+          "value": "true"
+        },
+        {
+          "name": "CUBA_WEB_PORT",
+          "value": "80"
+        },
+        {
+          "name": "CUBA_CORE_URL_CONNECTION_LIST",
+          "value": "http://%IP_OF_EC2_INSTACNE_MIDDLEWARE_SERVER_1%, http://%IP_OF_EC2_INSTACNE_MIDDLEWARE_SERVER_2%"
+        }
+      ],
+      "links": [
+        "cuba-ordermanagement-app-core"
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "cuba-ordermanagement-testing-logs-app",
+          "awslogs-region": "us-east-1"
+        }
+      }
+    }
+  ]
+}
