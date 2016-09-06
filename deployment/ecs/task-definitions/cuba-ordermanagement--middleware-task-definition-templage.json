@@ -46,6 +46,10 @@
         {
           "name": "CUBA_WEB_PORT",
           "value": "80"
+        },
+        {
+          "name": "CLOVER_JGROUPS_GOSSIP_HOSTS",
+          "value": "10.0.1.181[12001],10.0.2.131[12001]"
         }
       ],
       "logConfiguration": {
