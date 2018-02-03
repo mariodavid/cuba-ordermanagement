@@ -6,27 +6,29 @@
         lookupComponent="customersTable"
         messagesPack="com.company.ordermanagement.gui.customer">
     <dsContext>
-        <collectionDatasource id="customersDs"
-                              class="com.company.ordermanagement.entity.Customer"
-                              view="_local">
+        <groupDatasource id="customersDs"
+                         class="com.company.ordermanagement.entity.Customer"
+                         view="customer-view">
             <query>
                 <![CDATA[select e from om$Customer e]]>
             </query>
-        </collectionDatasource>
+        </groupDatasource>
     </dsContext>
+    <dialogMode height="600"
+                width="800"/>
     <layout expand="customersTable"
             spacing="true">
         <filter id="filter"
+                applyTo="customersTable"
                 datasource="customersDs">
             <properties include=".*"/>
         </filter>
-        <table id="customersTable"
-               width="100%">
+        <groupTable id="customersTable"
+                    width="100%">
             <actions>
                 <action id="create"/>
                 <action id="edit"/>
                 <action id="remove"/>
-                <action id="showDeepLink" invoke="showDeepLink" caption="msg://showDeepLink"/>
             </actions>
             <columns>
                 <column id="name"/>
@@ -45,10 +47,7 @@
                         action="customersTable.edit"/>
                 <button id="removeBtn"
                         action="customersTable.remove"/>
-
-
-                <button action="customersTable.showDeepLink"/>
             </buttonsPanel>
-        </table>
+        </groupTable>
     </layout>
 </window>

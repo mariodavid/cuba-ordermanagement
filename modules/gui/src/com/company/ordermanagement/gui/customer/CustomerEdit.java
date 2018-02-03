@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 ordermanagement
+ * Copyright (c) 2018 ordermanagement
  */
 package com.company.ordermanagement.gui.customer;
 

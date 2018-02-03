@@ -5,6 +5,6 @@
         <item id="om$ProductCategory.browse"/>
         <item id="om$Product.browse"/>
         <item id="om$Order.browse"/>
-        <item id="om$Customer.browse"/>
+        <item screen="om$Customer.browse"/>
     </menu>
 </menu-config>

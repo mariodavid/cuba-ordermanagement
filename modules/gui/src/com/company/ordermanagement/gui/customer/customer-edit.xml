@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
-        caption="msg://editCaption"
+        caption="msg://editorCaption"
         class="com.company.ordermanagement.gui.customer.CustomerEdit"
         datasource="customerDs"
         focusComponent="fieldGroup"
@@ -8,20 +8,50 @@
     <dsContext>
         <datasource id="customerDs"
                     class="com.company.ordermanagement.entity.Customer"
-                    view="customer-view"/>
+                    view="customer-view">
+            <collectionDatasource id="ordersDs"
+                                  property="orders">
+                <collectionDatasource id="lineItemsDs" property="lineItems" />
+            </collectionDatasource>
+        </datasource>
     </dsContext>
+    <dialogMode height="600"
+                width="800"/>
     <layout expand="windowActions"
             spacing="true">
         <fieldGroup id="fieldGroup"
                     datasource="customerDs">
             <column width="250px">
-                <field id="name"/>
-                <field id="firstname"/>
-                <field id="street"/>
-                <field id="postcode"/>
-                <field id="city"/>
+                <field property="name"/>
+                <field property="firstname"/>
+                <field property="street"/>
+                <field property="postcode"/>
+                <field property="city"/>
             </column>
         </fieldGroup>
+        <groupBox id="ordersBox"
+                  caption="msg://com.company.ordermanagement.entity/Customer.orders">
+            <table id="ordersTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="create"/>
+                    <action id="edit"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="lineItems"/>
+                    <column id="orderDate"/>
+                    <column id="customer"/>
+                </columns>
+                <rows datasource="ordersDs"/>
+                <buttonsPanel>
+                    <button action="ordersTable.create"/>
+                    <button action="ordersTable.edit"/>
+                    <button action="ordersTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
         <frame id="windowActions"
                screen="editWindowActions"/>
     </layout>

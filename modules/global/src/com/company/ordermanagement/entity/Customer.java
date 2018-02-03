@@ -10,6 +10,9 @@ import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
 import java.util.Set;
 import javax.persistence.OneToMany;
+import com.haulmont.chile.core.annotations.Composition;
+import com.haulmont.cuba.core.entity.annotation.OnDelete;
+import com.haulmont.cuba.core.global.DeletePolicy;
 
 /**
  * @author mario
@@ -35,6 +38,8 @@ public class Customer extends StandardEntity {
     @Column(name = "CITY", nullable = false)
     protected String city;
 
+    @Composition
+    @OnDelete(DeletePolicy.CASCADE)
     @OneToMany(mappedBy = "customer")
     protected Set<Order> orders;
 

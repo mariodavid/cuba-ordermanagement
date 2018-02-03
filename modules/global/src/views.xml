@@ -38,6 +38,6 @@
         <property name="postcode"/>
         <property name="city"/>
         <property name="orders"
-                  view="_local"/>
+                  view="order-view"/>
     </view>
 </views>
